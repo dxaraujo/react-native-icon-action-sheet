@@ -1,0 +1,32 @@
+{
+	"name": "react-native-icon-action-sheet",
+	"version": "0.0.1",
+	"description": "A fully fledged audio module created for music apps",
+	"contributors": [
+		{
+			"name": "Daniel Xavier Araújo",
+			"email": "danielxaraujo@gmail.com",
+			"url": "https://github.com/danielxaraujo"
+		}
+	],
+	"keywords": [
+		"react",
+		"react-native",
+		"action-sheet",
+		"ActionSheetIOS",
+		"icon",
+		"ios"
+	],
+	"license": "Apache-2.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/danielxaraujo/react-native-icon-action-sheet.git"
+	},
+	"bugs": {
+		"url": "https://github.com/danielxaraujo/react-native-icon-action-sheet/issues"
+	},
+	"peerDependencies": {
+		"react-native": ">=0.56.0",
+		"react": ">=16.5.0"
+	}
+}
