@@ -1,8 +1,8 @@
-import { NativeModules } from 'react-native';
+import { NativeModules, processColor } from 'react-native';
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
 
 const RNIconActionSheet = NativeModules.RNIconActionSheet;
-const RCTActionSheetManager = rNativeModules.ActionSheetManager;
+const RCTActionSheetManager = NativeModules.ActionSheetManager;
 
 /**
  * Display action sheets and share sheets on iOS.
@@ -21,12 +21,12 @@ const IconActionSheet = {
 		},
 		callback = () => { }
 	) {
-		if (options) {
-			options = options.map(opt => {
-				return { ...options, icon: opt.icon ? resolveAssetSource(opt.icon) : opt.icon }
+		if (options.options) {
+			options.options = options.options.map(opt => {
+				return { ...opt, icon: opt.icon ? resolveAssetSource(opt.icon) : opt.icon, titleTextColor: processColor(opt.titleTextColor) }
 			})
 		}
-		RNIconActionSheet.showActionSheetWithOptions({ ...options, tintColor: options.tintColor }, callback);
+		RNIconActionSheet.showActionSheetWithOptions({ ...options, tintColor: processColor(options.tintColor) }, callback);
 	},
 
 	showShareActionSheetWithOptions(

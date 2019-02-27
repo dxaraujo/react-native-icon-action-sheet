@@ -1,7 +1,7 @@
 {
 	"name": "react-native-icon-action-sheet",
 	"version": "0.0.1",
-	"description": "A fully fledged audio module created for music apps",
+	"description": "A custom ActionSheetIOS",
 	"contributors": [
 		{
 			"name": "Daniel Xavier Araújo",
