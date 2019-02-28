@@ -81,7 +81,7 @@ export default class App extends Component {
 					},
 					{
 						title: 'Settings',
-						icon: 'settings',
+						icon: settings,
 						titleTextAlignment: 0
 					},
 					{
