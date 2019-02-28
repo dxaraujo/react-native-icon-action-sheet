@@ -1,8 +1,8 @@
-import { NativeModules, processColor } from 'react-native';
+import { NativeModules, processColor, ActionSheetIOS } from 'react-native';
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
+import RNVectorHelper from './RNVectorHelper';
 
-const RNIconActionSheet = NativeModules.RNIconActionSheet;
-const RCTActionSheetManager = NativeModules.ActionSheetManager;
+const { RNIconActionSheet } = NativeModules;
 
 /**
  * Display action sheets and share sheets on iOS.
@@ -23,10 +23,27 @@ const IconActionSheet = {
 	) {
 		if (options.options) {
 			options.options = options.options.map(opt => {
-				return { ...opt, icon: opt.icon ? resolveAssetSource(opt.icon) : opt.icon, titleTextColor: processColor(opt.titleTextColor) }
+				let icon = undefined;
+				let type = undefined;
+				if (opt.icon) {
+					if (typeof opt.icon === 'string') {
+						icon = opt.icon;
+						type = 1;
+					} else if (typeof opt.icon === 'number') {
+						icon = resolveAssetSource(opt.icon);
+						type = 2;
+					} else if (opt.icon.props) {
+						let vectorIcon = RNVectorHelper.Resolve(opt.icon.props.family, opt.icon.props.name);
+						icon = Object.assign({}, opt.icon.props, vectorIcon);
+						type = 3;
+					}
+				}
+				const titleTextColor = processColor(opt.titleTextColor);
+				return { ...opt, icon, titleTextColor, type };
 			})
 		}
-		RNIconActionSheet.showActionSheetWithOptions({ ...options, tintColor: processColor(options.tintColor) }, callback);
+		const tintColor = processColor(options.tintColor)
+		RNIconActionSheet.showActionSheetWithOptions({ ...options, tintColor }, callback);
 	},
 
 	showShareActionSheetWithOptions(
@@ -34,8 +51,8 @@ const IconActionSheet = {
 		failureCallback = () => { },
 		successCallback = () => { }
 	) {
-		RCTActionSheetManager.showShareActionSheetWithOptions({ ...options, tintColor: processColor(options.tintColor) }, failureCallback, successCallback);
-	},
+		ActionSheetIOS.showShareActionSheetWithOptions(options, failureCallback, successCallback);
+	}
 };
 
 module.exports = IconActionSheet;
