@@ -17,7 +17,7 @@ export default class App extends Component {
 						title: 'User',
 						icon: 'user',
 						titleTextAlignment: 0,
-						titleTextColor: 'red'
+						titleTextColor: '#fc6c85'
 					},
 					{
 						title: 'Whatsapp',
@@ -27,7 +27,7 @@ export default class App extends Component {
 					},
 					{
 						title: 'Settings',
-						icon: settings,
+						icon: 'settings',
 						titleTextAlignment: 0
 					},
 					{
