@@ -123,3 +123,7 @@ const styles = StyleSheet.create({
 	}
 });
 ```
+
+## License
+
+Apache-2.0 © [danielxaraujo](https://github.com/danielxaraujo)
