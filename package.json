@@ -1,6 +1,6 @@
 {
 	"name": "react-native-icon-action-sheet",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "A custom ActionSheetIOS",
 	"contributors": [
 		{
@@ -17,7 +17,7 @@
 		"icon",
 		"ios"
 	],
-	"license": "Apache-2.0",
+	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/danielxaraujo/react-native-icon-action-sheet.git"
