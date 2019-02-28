@@ -1,29 +1,43 @@
 # react-native-icon-action-sheet
 
+> This is custom ActionSheetIOS, whith a possibility to add icons, change menu itens colors and text alignment
+
+[![NPM](https://img.shields.io/npm/v/react-native-icon-action-sheet.svg)](https://www.npmjs.com/package/react-native-icon-action-sheet) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 <img src="https://raw.githubusercontent.com/danielxaraujo/react-native-icon-action-sheet/master/assets/2019-02-28%2017.32.22.gif" width="30%" height="30%">
 
 ## Getting started
 
-`$ npm install react-native-icon-action-sheet --save`
+```bash
+npm install react-native-icon-action-sheet --save
+```
 
 or
 
-`$ yarn add react-native-icon-action-sheet`
+```bash
+yarn add react-native-icon-action-sheet
+```
 
 ## Dependencies
 
-`$ npm install react-native-vector-icons --save`
+```bash
+npm install react-native-vector-icons --save
+```
 
 or
 
-`$ yarn add react-native-vector-icons`
+```bash
+yarn add react-native-vector-icons
+```
 
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-icon-action-sheet`
+```bash
+react-native link react-native-icon-action-sheet
 
-`$ react-native link react-native-vector-icons`
+react-native link react-native-vector-icons
+```
 
 ### Manual installation
 
@@ -51,7 +65,8 @@ or
 
 
 ## Usage
-```javascript
+
+```jsx
 import React, { Component } from 'react';
 import { StyleSheet, View, Button } from 'react-native';
 import Icon from "react-native-vector-icons";
