@@ -6,12 +6,26 @@
 
 `$ npm install react-native-icon-action-sheet --save`
 
+or
+
+`$ yarn add react-native-icon-action-sheet`
+
+## Dependencies
+
+`$ npm install react-native-vector-icons --save`
+
+or
+
+`$ yarn add react-native-vector-icons`
+
+
 ### Mostly automatic installation
 
 `$ react-native link react-native-icon-action-sheet`
 
-### Manual installation
+`$ react-native link react-native-vector-icons`
 
+### Manual installation
 
 #### iOS
 
@@ -38,8 +52,59 @@
 
 ## Usage
 ```javascript
-import RNIconActionSheet from 'react-native-icon-action-sheet';
+import React, { Component } from 'react';
+import { StyleSheet, View, Button } from 'react-native';
+import Icon from "react-native-vector-icons";
+import IconActionSheet from 'react-native-icon-action-sheet'
 
-// TODO: What to do with the module?
-RNIconActionSheet;
+const settings = require('./assets/icons/32/settings.png')
+const whatsapp = <Icon name={"whatsapp"} size={32} family={"FontAwesome"} />;
+
+export default class App extends Component {
+	openIconActionSheet() {
+		IconActionSheet.showActionSheetWithOptions(
+			{
+				cancelButtonIndex: 3,
+				tintColor: '#007aff',
+				options: [
+					{
+						title: 'User',
+						icon: 'user',
+						titleTextAlignment: 0,
+						titleTextColor: '#fc6c85'
+					},
+					{
+						title: 'Whatsapp',
+						icon: whatsapp,
+						titleTextAlignment: 0,
+						titleTextColor: '#fc6c85'
+					},
+					{
+						title: 'Settings',
+						icon: 'settings',
+						titleTextAlignment: 0
+					},
+					{
+						title: 'Cancel'
+					}
+				]
+			}, (buttonIndex) => console.log('Chegou Aqui', buttonIndex))
+	}
+	render() {
+		return (
+			<View style={styles.container}>
+				<Button title='Call IconActionSheet' onPress={() => this.openIconActionSheet()} />
+			</View>
+		);
+	}
+}
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		backgroundColor: 'white',
+	}
+});
 ```
