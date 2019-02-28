@@ -1,6 +1,6 @@
 # react-native-icon-action-sheet
 
-![react-native-icon-action-sheet](https://raw.githubusercontent.com/danielxaraujo/react-native-icon-action-sheet/master/assets/2019-02-28%2017.32.22.gif)
+<img src="https://raw.githubusercontent.com/danielxaraujo/react-native-icon-action-sheet/master/assets/2019-02-28%2017.32.22.gif" width="30%" height="30%">
 
 ## Getting started
 
