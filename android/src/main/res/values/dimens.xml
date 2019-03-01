@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <dimen name="rn_iconactionsheet_title_size">16sp</dimen>
+    <dimen name="rn_iconactionsheet_title_vertical_margin">16dp</dimen>
+
+    <dimen name="rn_iconactionsheet_list_item_textsize">16sp</dimen>
+    <dimen name="rn_iconactionsheet_list_item_height">48dp</dimen>
+    <dimen name="rn_iconactionsheet_list_item_icon_size">24dp</dimen>
+
+    <dimen name="rn_iconactionsheet_horizontal_margin">16dp</dimen>
+    <dimen name="rn_iconactionsheet_vertical_margin">8dp</dimen>
+    <dimen name="rn_iconactionsheet_elevation">16dp</dimen>
+
+    <dimen name="rn_iconactionsheet_landscape_peek">400dp</dimen>
+</resources>

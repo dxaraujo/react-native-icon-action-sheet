@@ -10,6 +10,7 @@ export default class App extends Component {
 	openIconActionSheet() {
 		IconActionSheet.showActionSheetWithOptions(
 			{
+				title: 'Test',
 				cancelButtonIndex: 3,
 				tintColor: '#007aff',
 				options: [

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="rn_iconactionsheet_color_text">#DE000000</color>
+    <color name="rn_iconactionsheet_color_title">#8A000000</color>
+    <color name="rn_iconactionsheet_color_divider">#3f717171</color>
+</resources>

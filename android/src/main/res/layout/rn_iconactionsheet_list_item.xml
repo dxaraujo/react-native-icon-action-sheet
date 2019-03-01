@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/rn_iconactionsheet_list_item_height"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/rn_iconactionsheet_horizontal_margin"
+    android:paddingLeft="@dimen/rn_iconactionsheet_horizontal_margin"
+    android:paddingEnd="@dimen/rn_iconactionsheet_horizontal_margin"
+    android:paddingRight="@dimen/rn_iconactionsheet_horizontal_margin">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/rn_iconactionsheet_list_item_icon_size"
+        android:layout_height="@dimen/rn_iconactionsheet_list_item_icon_size"
+        android:layout_marginEnd="@dimen/rn_iconactionsheet_horizontal_margin"
+        android:layout_marginRight="@dimen/rn_iconactionsheet_horizontal_margin"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/rn_iconactionsheet_horizontal_margin"
+        android:layout_marginLeft="@dimen/rn_iconactionsheet_horizontal_margin"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="@color/rn_iconactionsheet_color_text"
+        android:textSize="@dimen/rn_iconactionsheet_list_item_textsize" />
+
+</LinearLayout>
