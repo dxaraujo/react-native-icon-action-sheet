@@ -14,6 +14,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.design.widget.BottomSheetDialog;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -58,18 +59,46 @@ public class RNIconActionSheetModule extends ReactContextBaseJavaModule {
         ReadableArray options = props.getArray("options");
 
         for (int index = 0; index < options.size(); index++) {
+
             ReadableMap option = options.getMap(index);
+            LinearLayout itemView = (LinearLayout) getCurrentActivity().getLayoutInflater().inflate(R.layout.rn_iconactionsheet_list_item, null);
 
             String itemTitle = option.getString("title");
             if (itemTitle != null) {
-                LinearLayout itemView = (LinearLayout) getCurrentActivity().getLayoutInflater().inflate(R.layout.rn_iconactionsheet_list_item, null);
                 TextView itemTitleView = itemView.findViewById(R.id.textView);
                 itemTitleView.setText(itemTitle);
-                sheetView.addView(itemView);
             }
+
+            int itemType = option.getInt("type");
+            if (itemType > 0) {
+                if (itemType == 3) {
+                    ReadableMap itemIcon = option.getMap("icon");
+                    if (itemIcon != null) {
+                        ImageView itemImageView = itemView.findViewById(R.id.imageView);
+
+                        Drawable drawable = this.generateVectorIcon(itemIcon);
+                        itemImageView.setImageDrawable(drawable);
+                    }
+                }
+            }
+
+            sheetView.addView(itemView);
         }
 
         bottomSheetDialog.show();
+    }
+
+    @TargetApi(21)
+    private Drawable generateImage(String name) {
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+		Resources resources = getReactApplicationContext().getResources();
+		name = name.substring(0, name.lastIndexOf("."));
+
+		final int resourceId = resources.getIdentifier(name, "drawable", getReactApplicationContext().getPackageName());
+		return getReactApplicationContext().getDrawable(resourceId);
     }
 
     @TargetApi(21)
@@ -83,14 +112,6 @@ public class RNIconActionSheetModule extends ReactContextBaseJavaModule {
         String glyph = icon.getString("glyph");
         String color = icon.getString("color");
         int size = icon.getInt("size");
-
-        if (name != null && name.length() > 0 && name.contains(".")) {
-            Resources resources = getReactApplicationContext().getResources();
-            name = name.substring(0, name.lastIndexOf("."));
-
-            final int resourceId = resources.getIdentifier(name, "drawable", getReactApplicationContext().getPackageName());
-            return getReactApplicationContext().getDrawable(resourceId);
-        }
 
         float scale = getReactApplicationContext().getResources().getDisplayMetrics().density;
         int fontSize = Math.round(size * scale);

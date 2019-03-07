@@ -3,8 +3,9 @@ import { StyleSheet, View, Button } from 'react-native';
 import Icon from "react-native-vector-icons";
 import IconActionSheet from 'react-native-icon-action-sheet'
 
-const settings = require('./assets/icons/32/settings.png')
-const whatsapp = <Icon name={"whatsapp"} size={32} family={"FontAwesome"} />;
+const user = <Icon name={"people"} size={32} color={'gray'} family={"FontAwesome"} />;
+const settings = <Icon name={"cog"} size={32} color={'gray'} family={"FontAwesome"} />;
+const whatsapp = <Icon name={"whatsapp"} size={32} color={'gray'} family={"FontAwesome"} />;
 
 export default class App extends Component {
 	openIconActionSheet() {
@@ -16,7 +17,7 @@ export default class App extends Component {
 				options: [
 					{
 						title: 'User',
-						icon: 'user',
+						icon: user,
 						titleTextAlignment: 0,
 						titleTextColor: '#fc6c85'
 					},
@@ -28,7 +29,7 @@ export default class App extends Component {
 					},
 					{
 						title: 'Settings',
-						icon: 'settings',
+						icon: settings,
 						titleTextAlignment: 0
 					},
 					{

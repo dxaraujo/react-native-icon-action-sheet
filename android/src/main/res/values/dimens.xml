@@ -5,7 +5,7 @@
     <dimen name="rn_iconactionsheet_title_vertical_margin">16dp</dimen>
 
     <dimen name="rn_iconactionsheet_list_item_textsize">16sp</dimen>
-    <dimen name="rn_iconactionsheet_list_item_height">48dp</dimen>
+    <dimen name="rn_iconactionsheet_list_item_height">56dp</dimen>
     <dimen name="rn_iconactionsheet_list_item_icon_size">24dp</dimen>
 
     <dimen name="rn_iconactionsheet_horizontal_margin">16dp</dimen>

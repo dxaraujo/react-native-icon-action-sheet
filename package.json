@@ -25,11 +25,9 @@
 	"bugs": {
 		"url": "https://github.com/danielxaraujo/react-native-icon-action-sheet/issues"
 	},
-	"dependencies": {
-		"react-native-vector-icons": "^5.0.0"
-	},
 	"peerDependencies": {
 		"react": ">=16.0.0",
-		"react-native": ">=0.47.0"
+		"react-native": ">=0.47.0",
+		"react-native-vector-icons": "^5.0.0"
 	}
 }

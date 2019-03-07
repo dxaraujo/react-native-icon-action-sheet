@@ -40,3 +40,6 @@ build/
 .gradle
 local.properties
 *.iml
+gradle/
+gradlew
+gradlew.bat
