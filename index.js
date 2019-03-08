@@ -26,6 +26,7 @@ const IconActionSheet = {
 						icon = Object.assign({}, opt.icon.props, vectorIcon);
 						type = 3;
 					}
+					opt.icon.color = opt.icon.color ? processColor(opt.icon.color) : opt.icon.color
 				}
 				const titleTextColor = processColor(opt.titleTextColor);
 				return { ...opt, icon, titleTextColor, type };
