@@ -49,7 +49,7 @@ public class RNIconActionSheetModule extends ReactContextBaseJavaModule {
         LinearLayout sheetView = (LinearLayout) getCurrentActivity().getLayoutInflater().inflate(R.layout.rn_iconactionsheet_list, null);
         bottomSheetDialog.setContentView(sheetView);
 
-        if (!props.isNull("title")) {
+        if (props.hasKey("title") && !props.isNull("title")) {
             String title = props.getString("title");
             TextView headerView = (TextView) getCurrentActivity().getLayoutInflater().inflate(R.layout.rn_iconactionsheet_list_header, null);
             headerView.setText(title);
@@ -63,13 +63,13 @@ public class RNIconActionSheetModule extends ReactContextBaseJavaModule {
             ReadableMap option = options.getMap(index);
             LinearLayout itemView = (LinearLayout) getCurrentActivity().getLayoutInflater().inflate(R.layout.rn_iconactionsheet_list_item, null);
 
-            if (!option.isNull("title")) {
+            if (option.hasKey("title") && !option.isNull("title")) {
                 String title = option.getString("title");
                 TextView titleTextView = itemView.findViewById(R.id.textView);
                 titleTextView.setText(title);
             }
 
-            if (!option.isNull("type")) {
+            if (option.hasKey("type") && !option.isNull("type")) {
                 int type = option.getInt("type");
                 if (type == 2) {
                     String itemIcon = option.getString("icon");

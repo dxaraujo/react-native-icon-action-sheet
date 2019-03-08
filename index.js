@@ -1,16 +1,16 @@
-import { NativeModules, processColor, ActionSheetIOS } from 'react-native';
+import { NativeModules, processColor } from 'react-native';
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
 import RNVectorHelper from './RNVectorHelper';
 
 const { RNIconActionSheet } = NativeModules;
 
 /**
- * Display action sheets and share sheets on iOS.
+ * Display action sheets on IOS and ANDROID.
  */
 const IconActionSheet = {
 
 	showActionSheetWithOptions(
-		options = {
+		props = {
 			title: undefined,
 			message: undefined,
 			options: [],
@@ -21,10 +21,10 @@ const IconActionSheet = {
 		},
 		callback = () => { }
 	) {
-		if (options.options) {
-			options.options = options.options.map(opt => {
+		if (props.options) {
+			props.options = props.options.map(opt => {
 				let icon = undefined;
-				let type = 0;
+				let type = undefined;
 				if (opt.icon) {
 					if (typeof opt.icon === 'string') {
 						icon = opt.icon;
@@ -42,16 +42,8 @@ const IconActionSheet = {
 				return { ...opt, icon, titleTextColor, type };
 			})
 		}
-		const tintColor = processColor(options.tintColor)
-		RNIconActionSheet.showActionSheetWithOptions({ ...options, tintColor }, callback);
-	},
-
-	showShareActionSheetWithOptions(
-		options = {},
-		failureCallback = () => { },
-		successCallback = () => { }
-	) {
-		ActionSheetIOS.showShareActionSheetWithOptions(options, failureCallback, successCallback);
+		const tintColor = processColor(props.tintColor)
+		RNIconActionSheet.showActionSheetWithOptions({ ...props, tintColor }, callback);
 	}
 };
 

@@ -8,7 +8,7 @@
 	"dependencies": {
 		"react": "16.6.3",
 		"react-native": "0.58.5",
-		"react-native-icon-action-sheet": "file:../",
+		"react-native-icon-action-sheet": "https://github.com/danielxaraujo/react-native-icon-action-sheet/tarball/master",
 		"react-native-vector-icons": "^6.3.0"
 	},
 	"devDependencies": {
