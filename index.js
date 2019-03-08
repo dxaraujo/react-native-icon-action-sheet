@@ -9,17 +9,7 @@ const { RNIconActionSheet } = NativeModules;
  */
 const IconActionSheet = {
 
-	showActionSheetWithOptions(
-		props = {
-			title: undefined,
-			message: undefined,
-			options: [],
-			destructiveButtonIndex: undefined,
-			cancelButtonIndex: undefined,
-			anchor: undefined,
-			tintColor: undefined
-		},
-		callback = () => { }
+	showActionSheetWithOptions(props = { options: [], callback = () => { }
 	) {
 		if (props.options) {
 			props.options = props.options.map(opt => {
