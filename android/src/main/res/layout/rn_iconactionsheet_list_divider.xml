@@ -4,6 +4,6 @@
     android:id="@+id/dividerView"
     android:layout_width="wrap_content"
     android:layout_height="1dp"
-    android:layout_marginBottom="@dimen/rn_iconactionsheet_vertical_margin"
-    android:layout_marginTop="@dimen/rn_iconactionsheet_vertical_margin"
-    android:background="@color/rn_iconactionsheet_color_divider" />
+    android:layout_marginBottom="@dimen/rniconactionsheet_divider_margin"
+    android:layout_marginTop="@dimen/rniconactionsheet_divider_margin"
+    android:background="@color/rniconactionsheet_divider_color" />

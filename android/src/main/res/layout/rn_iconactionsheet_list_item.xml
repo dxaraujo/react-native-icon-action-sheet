@@ -3,28 +3,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:foreground="?android:attr/selectableItemBackground"
     android:clickable="true"
-    android:focusable="true"
-    android:orientation="horizontal"
-    android:gravity="center_vertical"
-    android:padding="@dimen/rn_iconactionsheet_horizontal_margin" >
+	android:orientation="horizontal"
+	android:foreground="?android:attr/selectableItemBackground"
+	android:paddingTop="@dimen/rniconactionsheet_item_vertical_padding"
+	android:paddingStart="@dimen/rniconactionsheet_item_horizontal_padding"
+	android:paddingLeft="@dimen/rniconactionsheet_item_horizontal_padding"
+	android:paddingEnd="@dimen/rniconactionsheet_item_horizontal_padding"
+	android:paddingRight="@dimen/rniconactionsheet_item_horizontal_padding"
+	android:paddingBottom="@dimen/rniconactionsheet_item_vertical_padding" >
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="@dimen/rn_iconactionsheet_list_item_icon_size"
-        android:layout_height="@dimen/rn_iconactionsheet_list_item_icon_size"
-        android:scaleType="fitXY" />
+        android:layout_width="@dimen/rniconactionsheet_item_image_size"
+        android:layout_height="@dimen/rniconactionsheet_item_image_size"
+		android:layout_marginRight="@dimen/rniconactionsheet_item_image_margin"
+		android:tint="@color/rniconactionsheet_image_color" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:gravity="center_vertical"
-        android:singleLine="true"
-        android:textColor="@color/rn_iconactionsheet_color_text"
-		android:textSize="16sp" />
+		android:gravity="center_vertical"
+		android:text="Sample Text"
+		android:textColor="@color/rniconactionsheet_text_color"
+		android:textSize="@dimen/rniconactionsheet_textsize"
+        android:singleLine="true" />
 
 </LinearLayout>

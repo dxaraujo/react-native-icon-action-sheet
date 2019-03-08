@@ -44,7 +44,7 @@ public class RNIconActionSheetModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void showActionSheetWithOptions(final ReadableMap props, final Callback callback) {
 
-        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getCurrentActivity());
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getCurrentActivity(), R.style.RNIconActionSheet_DialogStyle);
 
         LinearLayout sheetView = (LinearLayout) getCurrentActivity().getLayoutInflater().inflate(R.layout.rn_iconactionsheet_list, null);
         bottomSheetDialog.setContentView(sheetView);

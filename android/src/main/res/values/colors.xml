@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <color name="rn_iconactionsheet_color_text">#737373</color>
-    <color name="rn_iconactionsheet_color_title">#737373</color>
-    <color name="rn_iconactionsheet_color_divider">#3f717171</color>
+    <color name="rniconactionsheet_header_color">#737373</color>
+    <color name="rniconactionsheet_divider_color">#737373</color>
+    <color name="rniconactionsheet_image_color">#737373</color>
+    <color name="rniconactionsheet_text_color">#737373</color>
 </resources>

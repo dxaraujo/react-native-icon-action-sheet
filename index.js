@@ -9,8 +9,7 @@ const { RNIconActionSheet } = NativeModules;
  */
 const IconActionSheet = {
 
-	showActionSheetWithOptions(props = { options: [], callback = () => { }
-	) {
+	showActionSheetWithOptions(props = { options: [] }, callback = () => { }) {
 		if (props.options) {
 			props.options = props.options.map(opt => {
 				let icon = undefined;
