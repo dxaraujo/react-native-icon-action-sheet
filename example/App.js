@@ -3,16 +3,14 @@ import { StyleSheet, View, Button } from 'react-native';
 import Icon from "react-native-vector-icons";
 import IconActionSheet from 'react-native-icon-action-sheet'
 
-const user = <Icon name={"people"} size={32} color={'gray'} family={"FontAwesome"} />;
-const settings = <Icon name={"cog"} size={32} color={'gray'} family={"FontAwesome"} />;
-const whatsapp = <Icon name={"whatsapp"} size={32} color={'gray'} family={"FontAwesome"} />;
+const user = <Icon name={"md-person"} size={24} color={"#737373"} family={"Ionicons"} />;
+const bookmark = <Icon name={"md-bookmark"} size={24} color={"#737373"} family={"Ionicons"} />;
+const settings = <Icon name={"md-cog"} size={24} color={"#737373"} family={"Ionicons"} />;
 
 export default class App extends Component {
 	openIconActionSheet() {
 		IconActionSheet.showActionSheetWithOptions(
 			{
-				title: 'Test',
-				cancelButtonIndex: 3,
 				tintColor: '#007aff',
 				options: [
 					{
@@ -22,8 +20,8 @@ export default class App extends Component {
 						titleTextColor: '#fc6c85'
 					},
 					{
-						title: 'Whatsapp',
-						icon: whatsapp,
+						title: 'Bookmark',
+						icon: bookmark,
 						titleTextAlignment: 0,
 						titleTextColor: '#fc6c85'
 					},
@@ -31,9 +29,6 @@ export default class App extends Component {
 						title: 'Settings',
 						icon: settings,
 						titleTextAlignment: 0
-					},
-					{
-						title: 'Cancel'
 					}
 				]
 			}, (buttonIndex) => console.log('Chegou Aqui', buttonIndex))

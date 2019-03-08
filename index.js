@@ -24,7 +24,7 @@ const IconActionSheet = {
 		if (options.options) {
 			options.options = options.options.map(opt => {
 				let icon = undefined;
-				let type = undefined;
+				let type = 0;
 				if (opt.icon) {
 					if (typeof opt.icon === 'string') {
 						icon = opt.icon;

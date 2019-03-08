@@ -49,8 +49,8 @@ public class RNIconActionSheetModule extends ReactContextBaseJavaModule {
         LinearLayout sheetView = (LinearLayout) getCurrentActivity().getLayoutInflater().inflate(R.layout.rn_iconactionsheet_list, null);
         bottomSheetDialog.setContentView(sheetView);
 
-        String title = props.getString("title");
-        if (title != null) {
+        if (!props.isNull("title")) {
+            String title = props.getString("title");
             TextView headerView = (TextView) getCurrentActivity().getLayoutInflater().inflate(R.layout.rn_iconactionsheet_list_header, null);
             headerView.setText(title);
             sheetView.addView(headerView);
@@ -63,19 +63,25 @@ public class RNIconActionSheetModule extends ReactContextBaseJavaModule {
             ReadableMap option = options.getMap(index);
             LinearLayout itemView = (LinearLayout) getCurrentActivity().getLayoutInflater().inflate(R.layout.rn_iconactionsheet_list_item, null);
 
-            String itemTitle = option.getString("title");
-            if (itemTitle != null) {
-                TextView itemTitleView = itemView.findViewById(R.id.textView);
-                itemTitleView.setText(itemTitle);
+            if (!option.isNull("title")) {
+                String title = option.getString("title");
+                TextView titleTextView = itemView.findViewById(R.id.textView);
+                titleTextView.setText(title);
             }
 
-            int itemType = option.getInt("type");
-            if (itemType > 0) {
-                if (itemType == 3) {
+            if (!option.isNull("type")) {
+                int type = option.getInt("type");
+                if (type == 2) {
+                    String itemIcon = option.getString("icon");
+                    if (itemIcon != null) {
+                        ImageView itemImageView = itemView.findViewById(R.id.imageView);
+                        Drawable drawable = this.generateImage(itemIcon);
+                        itemImageView.setImageDrawable(drawable);
+                    }
+                } else if (type == 3) {
                     ReadableMap itemIcon = option.getMap("icon");
                     if (itemIcon != null) {
                         ImageView itemImageView = itemView.findViewById(R.id.imageView);
-
                         Drawable drawable = this.generateVectorIcon(itemIcon);
                         itemImageView.setImageDrawable(drawable);
                     }
