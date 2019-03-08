@@ -23,10 +23,10 @@ const IconActionSheet = {
 						type = 2;
 					} else if (opt.icon.props) {
 						let vectorIcon = RNVectorHelper.Resolve(opt.icon.props.family, opt.icon.props.name);
-						icon = Object.assign({}, opt.icon.props, vectorIcon);
+						let color = opt.icon.props.color ? processColor(opt.icon.props.color) : opt.icon.props.color
+						icon = Object.assign({}, opt.icon.props, vectorIcon, { color });
 						type = 3;
 					}
-					opt.icon.color = opt.icon.color ? processColor(opt.icon.color) : opt.icon.color
 				}
 				const titleTextColor = processColor(opt.titleTextColor);
 				return { ...opt, icon, titleTextColor, type };
