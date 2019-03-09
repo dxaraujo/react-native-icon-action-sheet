@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Button, ActionSheetIOS } from 'react-native';
+import { StyleSheet, View, Button, Platform } from 'react-native';
 import Icon from "react-native-vector-icons";
 import IconActionSheet from 'react-native-icon-action-sheet'
 
-const edit = <Icon name={"pencil"} size={24} color={"#737373"} family={"MaterialCommunityIcons"} />;
-const share = <Icon name={"share-variant"} size={24} color={"#737373"} family={"MaterialCommunityIcons"} />;
-const document = <Icon name={"file-document"} size={24} color={"#737373"} family={"MaterialCommunityIcons"} />;
+const size = Platform.OS == 'ios' ? 30 : 24
+const edit = <Icon name={"create"} size={size} color={"#000000"} family={"MaterialIcons"} />;
+const share = <Icon name={"share"} size={size} color={"#000000"} family={"MaterialIcons"} />;
+const document = <Icon name={"link"} size={size} color={"#000000"} family={"MaterialIcons"} />;
 
 export default class App extends Component {
 	openIconActionSheet() {
@@ -33,7 +34,8 @@ export default class App extends Component {
 						title: 'Cancel'
 					}
 				]
-			}, (buttonIndex) => console.log('Chegou Aqui', buttonIndex))
+			}, (buttonIndex) => console.log('Chegou Aqui', buttonIndex)
+		)
 	}
 	render() {
 		return (

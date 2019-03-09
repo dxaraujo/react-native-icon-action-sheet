@@ -18,6 +18,7 @@
         android:layout_width="@dimen/rniconactionsheet_item_image_size"
         android:layout_height="@dimen/rniconactionsheet_item_image_size"
 		android:layout_marginRight="@dimen/rniconactionsheet_item_image_margin"
+		android:padding="@dimen/rniconactionsheet_item_image_padding"
 		android:tint="@color/rniconactionsheet_image_color" />
 
     <TextView
