@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/RNIconActionSheet.HeaderText"
 	android:id="@+id/header_title"
 	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"
 	android:layout_marginTop="@dimen/rniconactionsheet_header_margin"
 	android:text="Sample Title"
 	android:textColor="@color/rniconactionsheet_header_color"
-	android:textSize="@dimen/rniconactionsheet_textsize"
 	android:singleLine="true"
     android:paddingStart="@dimen/rniconactionsheet_header_padding"
     android:paddingLeft="@dimen/rniconactionsheet_header_padding"

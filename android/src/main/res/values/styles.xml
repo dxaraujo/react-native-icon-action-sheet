@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-
     <style name="RNIconActionSheet.DialogStyle" parent="Theme.Design.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/RNIconActionSheet.BottomSheetStyle</item>
     </style>
-
     <style name="RNIconActionSheet.BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@android:color/white</item>
     </style>
-
+    <style name="RNIconActionSheet.HeaderText" parent="TextAppearance.MaterialComponents.Subtitle2" />
+    <style name="RNIconActionSheet.Text" parent="TextAppearance.MaterialComponents.Body1" />
 </resources>

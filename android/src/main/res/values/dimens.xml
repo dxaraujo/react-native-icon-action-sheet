@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-
-    <dimen name="rniconactionsheet_textsize">16sp</dimen>
     <dimen name="rniconactionsheet_list_padding">8dp</dimen>
     <dimen name="rniconactionsheet_divider_margin">8dp</dimen>
     <dimen name="rniconactionsheet_header_margin">8dp</dimen>
     <dimen name="rniconactionsheet_header_padding">16dp</dimen>
-
     <dimen name="rniconactionsheet_item_vertical_padding">8dp</dimen>
     <dimen name="rniconactionsheet_item_horizontal_padding">16dp</dimen>
     <dimen name="rniconactionsheet_item_image_size">24dp</dimen>
     <dimen name="rniconactionsheet_item_image_margin">32dp</dimen>
-
 </resources>
