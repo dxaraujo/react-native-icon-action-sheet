@@ -114,9 +114,8 @@ public class RNIconActionSheetModule extends ReactContextBaseJavaModule {
         StrictMode.setThreadPolicy(policy);
 
         String family = icon.getString("family");
-        String name = icon.getString("name");
         String glyph = icon.getString("glyph");
-        String color = icon.getString("color");
+        Double color = icon.getDouble("color");
         int size = icon.getInt("size");
 
         float scale = getReactApplicationContext().getResources().getDisplayMetrics().density;
@@ -125,7 +124,7 @@ public class RNIconActionSheetModule extends ReactContextBaseJavaModule {
         Typeface typeface = ReactFontManager.getInstance().getTypeface(family, 0, getReactApplicationContext().getAssets());
         Paint paint = new Paint();
         paint.setTypeface(typeface);
-        paint.setColor(Color.parseColor(color));
+        paint.setColor(color.intValue());
         paint.setTextSize(fontSize);
         paint.setAntiAlias(true);
         Rect textBounds = new Rect();
