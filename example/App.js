@@ -7,28 +7,38 @@ const size = Platform.OS == 'ios' ? 30 : 24
 const edit = <Icon name={"create"} size={size} color={"#000000"} family={"MaterialIcons"} />;
 const share = <Icon name={"share"} size={size} color={"#000000"} family={"MaterialIcons"} />;
 const document = <Icon name={"link"} size={size} color={"#000000"} family={"MaterialIcons"} />;
+const user = require('./assets/icons/32/user.png')
 
 export default class App extends Component {
 	openIconActionSheet() {
 		IconActionSheet.showActionSheetWithOptions(
 			{
 				title: 'Options',
-				cancelButtonIndex: 3,
+				cancelButtonIndex: 4,
 				options: [
 					{
 						title: 'Edit',
 						icon: edit,
-						titleTextAlignment: 0
+						titleTextAlignment: 0,
+						titleTextColor: '#fc6c85'
 					},
 					{
 						title: 'Share',
 						icon: share,
-						titleTextAlignment: 0
+						titleTextAlignment: 0,
+						titleTextColor: '#fc6c85'
 					},
 					{
 						title: 'Document',
 						icon: document,
-						titleTextAlignment: 0
+						titleTextAlignment: 0,
+						titleTextColor: '#fc6c85'
+					},
+					{
+						title: 'User',
+						icon: user,
+						titleTextAlignment: 0,
+						titleTextColor: '#fc6c85'
 					},
 					{
 						title: 'Cancel'
