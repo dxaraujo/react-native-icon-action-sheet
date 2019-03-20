@@ -32,14 +32,15 @@ RCT_EXPORT_MODULE()
     }
 }
 
-- (UIImage *) generateVectorIcon: (NSDictionary *) icon {
+- (UIImage *) generateVectorIcon: (NSDictionary *) icon
+{
     NSString *family = [icon objectForKey: @"family"];
-    NSString *name = [icon objectForKey: @"name"];
     NSString *glyph = [icon objectForKey: @"glyph"];
     NSNumber *size = [icon objectForKey: @"size"];
+    UIColor *color = [RCTConvert UIColor:[icon objectForKey:@"color"]];
 
     UIFont *font = [UIFont fontWithName:family size:[size floatValue]];
-    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:glyph attributes:@{NSFontAttributeName: font}];
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:glyph attributes:@{NSFontAttributeName: font, NSForegroundColorAttributeName: color}];
 
     CGSize iconSize = [attributedString size];
     UIGraphicsBeginImageContextWithOptions(iconSize, NO, 0.0);
@@ -109,7 +110,7 @@ RCT_EXPORT_METHOD(showActionSheetWithOptions:(NSDictionary *)options callback:(R
                 image = [self generateVectorIcon: [RCTConvert NSDictionary:[option valueForKey:@"icon"]]];
             }
             
-            [action setValue:image forKey:@"image"];
+            [action setValue:[image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forKey:@"image"];
         }
         
         if ([option objectForKey:@"titleTextAlignment"]) {
