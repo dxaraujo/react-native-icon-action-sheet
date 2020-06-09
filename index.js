@@ -22,7 +22,7 @@ const IconActionSheet = {
 						icon = resolveAssetSource(opt.icon);
 						type = 2;
 					} else if (opt.icon.props) {
-						let vectorIcon = RNVectorHelper.Resolve(opt.icon.props.family, opt.icon.props.name);
+						let vectorIcon = RNVectorHelper.Resolve(opt.icon.props.family ? opt.icon.props.family : opt.icon.type.getFontFamily(), opt.icon.props.name);
 						let color = opt.icon.props.color ? processColor(opt.icon.props.color) : null
 						icon = Object.assign({}, opt.icon.props, vectorIcon, { color });
 						type = 3;
